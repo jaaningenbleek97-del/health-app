@@ -12,7 +12,7 @@ export function SupplementsSubnav() {
       <Link
         href="/stack"
         className={`rounded-xl px-3 py-2 text-center text-sm font-semibold ${
-          catalog ? "text-sage-600" : "bg-white text-sage-900 shadow-sm"
+          catalog ? "text-sage-600" : "bg-surface text-sage-900 shadow-sm"
         }`}
       >
         Yours
@@ -20,7 +20,7 @@ export function SupplementsSubnav() {
       <Link
         href="/supplements"
         className={`rounded-xl px-3 py-2 text-center text-sm font-semibold ${
-          catalog ? "bg-white text-sage-900 shadow-sm" : "text-sage-600"
+          catalog ? "bg-surface text-sage-900 shadow-sm" : "text-sage-600"
         }`}
       >
         Catalog

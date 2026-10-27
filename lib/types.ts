@@ -33,6 +33,7 @@ export type SupplementCategory =
   | "vitamin"
   | "mineral"
   | "herb"
+  | "mushroom"
   | "other"
   | "amino";
 
@@ -101,7 +102,8 @@ export type RemedyCategory =
   | "skin"
   | "energy"
   | "metabolic"
-  | "circadian";
+  | "circadian"
+  | "recovery";
 
 export interface Remedy {
   id: string;
@@ -224,4 +226,6 @@ export interface WeeklySchedule {
   appliedFoundationId?: ApproachPillar | null;
 }
 
-export const PERSIST_VERSION = 7;
+export type ThemeMode = "dark" | "light";
+
+export const PERSIST_VERSION = 8;

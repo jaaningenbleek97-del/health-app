@@ -24,6 +24,7 @@ import {
 } from "./schedule";
 import { normalizeStackItem } from "./stackDose";
 import { itemsInWindow, type StackWindow } from "./stackWindows";
+import { applyThemeClass, normalizeTheme } from "./theme";
 import { PERSIST_VERSION } from "./types";
 import { uid } from "./uid";
 import type {
@@ -41,6 +42,7 @@ import type {
   Reminder,
   StackItem,
   Supplement,
+  ThemeMode,
   WeekDayPlan,
   WeeklySchedule,
   Workout,
@@ -70,6 +72,7 @@ export interface PersistedNatura {
   customRemedies: Remedy[];
   weeklySchedule: WeeklySchedule;
   circadianPrefs: CircadianPrefs;
+  theme: ThemeMode;
 }
 
 interface NaturaState extends PersistedNatura {
@@ -78,6 +81,7 @@ interface NaturaState extends PersistedNatura {
   setDisplayName: (name: string) => void;
   setNotificationsEnabled: (enabled: boolean) => void;
   setSoundEnabled: (enabled: boolean) => void;
+  setTheme: (theme: ThemeMode) => void;
   setOnboardingComplete: (done: boolean) => void;
 
   setRdiProfile: (profile: RdiProfile) => void;
@@ -209,6 +213,7 @@ const persistedDefaults: PersistedNatura = {
   customRemedies: [],
   weeklySchedule: defaultWeeklySchedule(),
   circadianPrefs: defaultCircadianPrefs(),
+  theme: "dark",
 };
 
 function normalizeReminder(r: Reminder): Reminder {
@@ -270,6 +275,7 @@ export function applyPersistedJson(raw: string | null): void {
       circadianPrefs: normalizeCircadianPrefs(
         (p as Partial<PersistedNatura>).circadianPrefs
       ),
+      theme: normalizeTheme((p as Partial<PersistedNatura>).theme),
       hasHydrated: true,
     });
   } catch {
@@ -287,6 +293,10 @@ export const useNaturaStore = create<NaturaState>()(
       setNotificationsEnabled: (enabled) =>
         set({ notificationsEnabled: enabled }),
       setSoundEnabled: (enabled) => set({ soundEnabled: enabled }),
+      setTheme: (theme) => {
+        applyThemeClass(theme);
+        set({ theme });
+      },
       setOnboardingComplete: (done) => set({ onboardingComplete: done }),
       setRdiProfile: (profile) => set({ rdiProfile: profile }),
 
@@ -635,6 +645,7 @@ export const useNaturaStore = create<NaturaState>()(
           customRemedies: s.customRemedies,
           weeklySchedule: s.weeklySchedule,
           circadianPrefs: s.circadianPrefs,
+          theme: s.theme,
         };
       },
 
@@ -660,6 +671,7 @@ export const useNaturaStore = create<NaturaState>()(
           customRemedies: parsed.customRemedies,
           weeklySchedule: parsed.weeklySchedule,
           circadianPrefs: parsed.circadianPrefs,
+          theme: parsed.theme,
         });
         return true;
       },
@@ -881,6 +893,7 @@ export const useNaturaStore = create<NaturaState>()(
         customRemedies: state.customRemedies,
         weeklySchedule: state.weeklySchedule,
         circadianPrefs: state.circadianPrefs,
+        theme: state.theme,
       }),
       skipHydration: true,
       migrate: (persisted, version) => {
@@ -925,6 +938,7 @@ export const useNaturaStore = create<NaturaState>()(
           circadianPrefs: normalizeCircadianPrefs(
             (p as Partial<PersistedNatura>).circadianPrefs
           ),
+          theme: normalizeTheme((p as Partial<PersistedNatura>).theme),
         };
       },
     }

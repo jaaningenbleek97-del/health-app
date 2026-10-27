@@ -51,20 +51,20 @@ export default function NewRemedyPage() {
       </Link>
       <h1 className="text-2xl font-bold text-sage-900">Custom remedy</h1>
       <input
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <textarea
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         rows={2}
         placeholder="Summary"
         value={summary}
         onChange={(e) => setSummary(e.target.value)}
       />
       <select
-        className="w-full rounded-xl border border-cream-200 px-3 py-2 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
         value={category}
         onChange={(e) => setCategory(e.target.value as RemedyCategory)}
       >
@@ -72,26 +72,27 @@ export default function NewRemedyPage() {
         <option value="sleep">Sleep</option>
         <option value="metabolic">Metabolic</option>
         <option value="stress">Stress</option>
+        <option value="recovery">Recovery</option>
         <option value="digestion">Digestion</option>
         <option value="energy">Energy</option>
         <option value="immunity">Immunity</option>
         <option value="skin">Skin</option>
       </select>
       <input
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         placeholder="Ingredients, comma separated"
         value={ingredients}
         onChange={(e) => setIngredients(e.target.value)}
       />
       <textarea
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         rows={4}
         placeholder="Steps, one per line"
         value={steps}
         onChange={(e) => setSteps(e.target.value)}
       />
       <textarea
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         rows={2}
         placeholder="Safety note"
         value={safety}

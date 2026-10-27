@@ -2,6 +2,7 @@ import { normalizeCheckin } from "@/lib/checkin";
 import { normalizeCircadianPrefs } from "@/lib/circadian";
 import { normalizeWeeklySchedule } from "@/lib/schedule";
 import { normalizeStackItem } from "@/lib/stackDose";
+import { normalizeTheme } from "@/lib/theme";
 import { PERSIST_VERSION } from "@/lib/types";
 import type {
   CircadianPrefs,
@@ -12,6 +13,7 @@ import type {
   Reminder,
   StackItem,
   Supplement,
+  ThemeMode,
   WeeklySchedule,
   Workout,
   WorkoutLog,
@@ -36,6 +38,7 @@ export interface BackupPayload {
   customRemedies: Remedy[];
   weeklySchedule: WeeklySchedule;
   circadianPrefs: CircadianPrefs;
+  theme: ThemeMode;
 }
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -167,6 +170,7 @@ export function parseBackup(raw: unknown): BackupPayload | null {
         ? (raw.circadianPrefs as unknown as Partial<CircadianPrefs>)
         : undefined
     ),
+    theme: normalizeTheme(raw.theme),
   };
 }
 

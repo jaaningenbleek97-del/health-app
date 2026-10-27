@@ -1,6 +1,6 @@
-# Natura
+# Terrain
 
-Local-first natural wellness web app: gentle fitness, vitamins & herbs, exercise reminders, and all-natural remedies. Data stays in your browser — no account.
+Local-first functional wellness web app: gentle fitness, vitamins & herbs, exercise reminders, and remedies. Data stays in your browser — no account.
 
 ## Run locally
 

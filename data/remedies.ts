@@ -1,6 +1,7 @@
+import { moreRemedies } from "@/data/moreRemedies";
 import type { Remedy } from "@/lib/types";
 
-export const remedies: Remedy[] = [
+const catalogRemedies: Remedy[] = [
   {
     id: "chamomile-wind-down",
     title: "Chamomile evening tea",
@@ -492,6 +493,8 @@ export const remedies: Remedy[] = [
   },
 ];
 
+export const remedies: Remedy[] = [...catalogRemedies, ...moreRemedies];
+
 export function getRemedy(id: string): Remedy | undefined {
   return remedies.find((r) => r.id === id);
 }
@@ -501,6 +504,7 @@ export const remedyCategories: { id: Remedy["category"]; label: string }[] = [
   { id: "sleep", label: "Sleep" },
   { id: "metabolic", label: "Metabolic" },
   { id: "stress", label: "Stress" },
+  { id: "recovery", label: "Recovery" },
   { id: "digestion", label: "Digestion" },
   { id: "energy", label: "Energy" },
   { id: "immunity", label: "Immunity" },

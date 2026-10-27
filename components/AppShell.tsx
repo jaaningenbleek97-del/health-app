@@ -29,13 +29,13 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <div className="min-h-dvh bg-cream-50 text-sage-900">
+    <div className="min-h-dvh bg-cream-50 text-sage-900" style={{ backgroundColor: "rgb(var(--cream-50))", color: "rgb(var(--sage-900))" }}>
       <div className="mx-auto flex min-h-dvh max-w-6xl">
         {/* Desktop side nav */}
         <aside className="hidden w-56 shrink-0 border-r border-cream-200 bg-cream-100/60 p-4 md:flex md:flex-col">
           <Link href="/" className="mb-8 px-2">
             <div className="text-xl font-bold tracking-tight text-sage-800">
-              Natura
+              Terrain
             </div>
             <div className="text-xs text-sage-600">Functional wellness</div>
           </Link>
@@ -116,7 +116,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <header className="sticky top-0 z-20 border-b border-cream-200/80 bg-cream-50/90 px-4 py-3 backdrop-blur md:hidden">
             <div className="flex items-center justify-between">
               <Link href="/" className="text-lg font-bold text-sage-800">
-                Natura
+                Terrain
               </Link>
               <div className="flex gap-2">
                 <Link

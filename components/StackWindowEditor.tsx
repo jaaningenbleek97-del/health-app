@@ -212,7 +212,7 @@ export function StackWindowEditor({ window }: { window: StackWindow }) {
         <h2 className="font-semibold text-sage-900">Add to {title.toLowerCase()}</h2>
         <input
           type="search"
-          className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           placeholder="Search vitamins & herbs…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}

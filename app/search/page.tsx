@@ -54,7 +54,7 @@ export default function SearchPage() {
       <input
         type="search"
         autoFocus
-        className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         placeholder="Try magnesium, walk, sleep, ginger…"
         value={query}
         onChange={(e) => setQuery(e.target.value)}

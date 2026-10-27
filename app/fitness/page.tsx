@@ -64,7 +64,7 @@ export default function FitnessPage() {
 
       <input
         type="search"
-        className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         placeholder="Search walks, yoga, breath…"
         value={query}
         onChange={(e) => setQuery(e.target.value)}

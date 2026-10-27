@@ -100,7 +100,10 @@ export function foundationRecipe(
         title: "Gut week",
         habits: ["meal-walk"],
         workouts: [{ id: "desk-mobility", time: "15:00", days: WEEKDAYS }],
-        remedies: [{ id: "ginger-tea-queasy", time: "19:00" }],
+        remedies: [
+          { id: "ginger-tea-queasy", time: "19:00" },
+          { id: "fermented-fork", time: "18:30" },
+        ],
         supplements: [
           { id: "probiotics", timing: "morning" },
           { id: "ginger", timing: "with_food" },
@@ -136,7 +139,7 @@ export function foundationRecipe(
           { id: "zone2-walk", time: walk, days: WEEKDAYS },
           { id: "yoga-restore", time: evening, days: [0] },
         ],
-        remedies: [],
+        remedies: [{ id: "traditional-sauna", time: "18:30", days: [2, 4] }],
         supplements: [
           { id: "omega-3", timing: "with_food" },
           { id: "turmeric", timing: "with_food" },
@@ -169,7 +172,7 @@ export function foundationRecipe(
           { id: "beginner-strength", time: "17:00", days: [1, 3, 5] },
           { id: "zone2-walk", time: walk, days: [2, 4, 6] },
         ],
-        remedies: [],
+        remedies: [{ id: "traditional-sauna", time: "19:00", days: [2, 4, 6] }],
         supplements: [
           { id: "creatine", timing: "anytime" },
           { id: "magnesium", timing: "evening" },
@@ -177,7 +180,7 @@ export function foundationRecipe(
         restDays: [0],
         stackMorningTime: clock.morningStackHm,
         stackEveningTime: clock.eveningStackHm,
-        note: "Recovery week — lift 3×, walk 3×, rest Sunday.",
+        note: "Recovery week — lift 3×, walk 3×, sauna, rest Sunday.",
       };
     case "focus":
       return {

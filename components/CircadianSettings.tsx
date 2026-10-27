@@ -95,7 +95,7 @@ export function CircadianSettings() {
             <span className="text-xs font-medium text-sage-600">First bite</span>
             <input
               type="time"
-              className="mt-1 w-full rounded-lg border border-cream-200 bg-white px-2 py-1.5 text-sm"
+              className="mt-1 w-full rounded-lg border border-cream-200 bg-surface px-2 py-1.5 text-sm"
               value={prefs.eatingStart}
               onChange={(e) =>
                 setCircadianPrefs({ eatingStart: e.target.value })
@@ -106,7 +106,7 @@ export function CircadianSettings() {
             <span className="text-xs font-medium text-sage-600">Last bite</span>
             <input
               type="time"
-              className="mt-1 w-full rounded-lg border border-cream-200 bg-white px-2 py-1.5 text-sm"
+              className="mt-1 w-full rounded-lg border border-cream-200 bg-surface px-2 py-1.5 text-sm"
               value={prefs.eatingEnd}
               onChange={(e) => setCircadianPrefs({ eatingEnd: e.target.value })}
             />

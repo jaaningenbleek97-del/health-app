@@ -2,15 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #fbf8f1;
-  --foreground: #1f2b1e;
+:root,
+html.dark {
+  color-scheme: dark;
+  --background: 18 22 18;
+  --foreground: 230 235 227;
+  --surface: 30 38 30;
+  --cream-50: 20 25 20;
+  --cream-100: 28 35 28;
+  --cream-200: 44 53 44;
+  --cream-300: 61 71 60;
+  --sage-50: 26 34 25;
+  --sage-100: 36 48 35;
+  --sage-200: 53 69 52;
+  --sage-300: 111 138 108;
+  --sage-400: 138 168 136;
+  --sage-500: 122 154 120;
+  --sage-600: 107 143 104;
+  --sage-700: 156 186 152;
+  --sage-800: 210 220 206;
+  --sage-900: 238 242 234;
+  --terracotta-50: 42 28 22;
+  --terracotta-100: 61 42 34;
+  --terracotta-200: 92 61 48;
+  --terracotta-300: 201 132 96;
+  --terracotta-400: 217 148 110;
+  --terracotta-500: 224 160 122;
+  --terracotta-600: 201 114 74;
+  --terracotta-700: 240 196 168;
+  --terracotta-800: 248 220 200;
+}
+
+html.light {
+  color-scheme: light;
+  --background: 251 248 241;
+  --foreground: 31 43 30;
+  --surface: 255 255 255;
+  --cream-50: 251 248 241;
+  --cream-100: 245 239 224;
+  --cream-200: 237 228 206;
+  --cream-300: 224 212 181;
+  --sage-50: 242 245 240;
+  --sage-100: 224 232 219;
+  --sage-200: 197 212 188;
+  --sage-300: 163 184 160;
+  --sage-400: 122 154 120;
+  --sage-500: 92 125 90;
+  --sage-600: 74 101 72;
+  --sage-700: 58 80 57;
+  --sage-800: 45 62 44;
+  --sage-900: 31 43 30;
+  --terracotta-50: 251 240 235;
+  --terracotta-100: 245 217 204;
+  --terracotta-200: 232 184 160;
+  --terracotta-300: 217 148 110;
+  --terracotta-400: 201 114 74;
+  --terracotta-500: 181 90 53;
+  --terracotta-600: 154 72 41;
+  --terracotta-700: 125 57 32;
+  --terracotta-800: 90 40 24;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
   min-height: 100dvh;
+}
+
+input,
+select,
+textarea {
+  color: inherit;
+  color-scheme: inherit;
+}
+
+/* sage-600 is also the filled-button color; brighten body/muted text only */
+html.dark .text-sage-600 {
+  color: rgb(var(--sage-400));
+}
+html.dark .text-sage-600\/80 {
+  color: rgb(var(--sage-400) / 0.85);
+}
+html.dark .text-sage-500 {
+  color: rgb(var(--sage-400));
 }
 
 @layer utilities {
@@ -21,13 +95,16 @@ body {
 
 @layer components {
   .card {
-    @apply rounded-2xl bg-white/80 border border-cream-200 shadow-sm;
+    border-radius: 1rem;
+    border: 1px solid rgb(var(--cream-200));
+    background: rgb(var(--surface));
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.12);
   }
   .btn-primary {
     @apply inline-flex items-center justify-center rounded-xl bg-sage-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-sage-700 active:scale-[0.98] disabled:opacity-50;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl bg-cream-100 px-4 py-2.5 text-sm font-semibold text-sage-800 border border-cream-200 transition hover:bg-cream-200 active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-xl border border-cream-200 bg-cream-100 px-4 py-2.5 text-sm font-semibold text-sage-800 transition hover:bg-cream-200 active:scale-[0.98];
   }
   .chip {
     @apply inline-flex items-center rounded-full bg-sage-100 px-2.5 py-0.5 text-xs font-medium text-sage-800;
@@ -35,4 +112,68 @@ body {
   .chip-terra {
     @apply inline-flex items-center rounded-full bg-terracotta-100 px-2.5 py-0.5 text-xs font-medium text-terracotta-700;
   }
+}
+
+/* Unlayered so these beat Tailwind's cached hex utilities */
+.bg-cream-50 { background-color: rgb(var(--cream-50) / var(--tw-bg-opacity, 1)); }
+.bg-cream-100 { background-color: rgb(var(--cream-100) / var(--tw-bg-opacity, 1)); }
+.bg-cream-200 { background-color: rgb(var(--cream-200) / var(--tw-bg-opacity, 1)); }
+.bg-cream-300 { background-color: rgb(var(--cream-300) / var(--tw-bg-opacity, 1)); }
+.bg-cream-50\/90 { background-color: rgb(var(--cream-50) / 0.9); }
+.bg-cream-50\/95 { background-color: rgb(var(--cream-50) / 0.95); }
+.bg-cream-100\/60 { background-color: rgb(var(--cream-100) / 0.6); }
+.bg-surface { background-color: rgb(var(--surface) / var(--tw-bg-opacity, 1)); }
+.bg-sage-50 { background-color: rgb(var(--sage-50) / var(--tw-bg-opacity, 1)); }
+.bg-sage-100 { background-color: rgb(var(--sage-100) / var(--tw-bg-opacity, 1)); }
+.bg-sage-600 { background-color: rgb(var(--sage-600) / var(--tw-bg-opacity, 1)); }
+.bg-sage-700 { background-color: rgb(var(--sage-700) / var(--tw-bg-opacity, 1)); }
+.bg-terracotta-50 { background-color: rgb(var(--terracotta-50) / var(--tw-bg-opacity, 1)); }
+.bg-terracotta-50\/80 { background-color: rgb(var(--terracotta-50) / 0.8); }
+.bg-terracotta-100 { background-color: rgb(var(--terracotta-100) / var(--tw-bg-opacity, 1)); }
+.bg-terracotta-600 { background-color: rgb(var(--terracotta-600) / var(--tw-bg-opacity, 1)); }
+
+.text-sage-400 { color: rgb(var(--sage-400) / var(--tw-text-opacity, 1)); }
+.text-sage-500 { color: rgb(var(--sage-500) / var(--tw-text-opacity, 1)); }
+.text-sage-600 { color: rgb(var(--sage-600) / var(--tw-text-opacity, 1)); }
+.text-sage-700 { color: rgb(var(--sage-700) / var(--tw-text-opacity, 1)); }
+.text-sage-800 { color: rgb(var(--sage-800) / var(--tw-text-opacity, 1)); }
+.text-sage-900 { color: rgb(var(--sage-900) / var(--tw-text-opacity, 1)); }
+.text-terracotta-700 { color: rgb(var(--terracotta-700) / var(--tw-text-opacity, 1)); }
+.text-terracotta-800 { color: rgb(var(--terracotta-800) / var(--tw-text-opacity, 1)); }
+
+.border-cream-200 { border-color: rgb(var(--cream-200) / var(--tw-border-opacity, 1)); }
+.border-cream-200\/80 { border-color: rgb(var(--cream-200) / 0.8); }
+.border-sage-300 { border-color: rgb(var(--sage-300) / var(--tw-border-opacity, 1)); }
+.border-sage-500 { border-color: rgb(var(--sage-500) / var(--tw-border-opacity, 1)); }
+.border-sage-600 { border-color: rgb(var(--sage-600) / var(--tw-border-opacity, 1)); }
+.border-terracotta-100 { border-color: rgb(var(--terracotta-100) / var(--tw-border-opacity, 1)); }
+
+.hover\:bg-cream-50:hover { background-color: rgb(var(--cream-50) / var(--tw-bg-opacity, 1)); }
+.hover\:bg-cream-200:hover { background-color: rgb(var(--cream-200) / var(--tw-bg-opacity, 1)); }
+.hover\:bg-sage-700:hover { background-color: rgb(var(--sage-700) / var(--tw-bg-opacity, 1)); }
+.hover\:border-sage-300:hover { border-color: rgb(var(--sage-300) / var(--tw-border-opacity, 1)); }
+.disabled\:text-sage-400:disabled { color: rgb(var(--sage-400) / var(--tw-text-opacity, 1)); }
+
+.btn-primary {
+  background-color: rgb(var(--sage-600));
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: rgb(var(--sage-700));
+}
+.btn-secondary {
+  border-color: rgb(var(--cream-200));
+  background-color: rgb(var(--cream-100));
+  color: rgb(var(--sage-800));
+}
+.btn-secondary:hover {
+  background-color: rgb(var(--cream-200));
+}
+.chip {
+  background-color: rgb(var(--sage-100));
+  color: rgb(var(--sage-800));
+}
+.chip-terra {
+  background-color: rgb(var(--terracotta-100));
+  color: rgb(var(--terracotta-700));
 }

@@ -63,13 +63,13 @@ export default function NewWorkoutPage() {
         One step per line. Use <code>Name | minutes</code>.
       </p>
       <input
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <textarea
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         rows={2}
         placeholder="Short description"
         value={description}
@@ -77,7 +77,7 @@ export default function NewWorkoutPage() {
       />
       <div className="grid grid-cols-2 gap-2">
         <select
-          className="rounded-xl border border-cream-200 px-3 py-2 text-sm"
+          className="rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={category}
           onChange={(e) => setCategory(e.target.value as WorkoutCategory)}
         >
@@ -90,7 +90,7 @@ export default function NewWorkoutPage() {
           <option value="breath">Breath</option>
         </select>
         <select
-          className="rounded-xl border border-cream-200 px-3 py-2 text-sm"
+          className="rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={difficulty}
           onChange={(e) => setDifficulty(e.target.value as WorkoutDifficulty)}
         >
@@ -100,7 +100,7 @@ export default function NewWorkoutPage() {
         </select>
       </div>
       <textarea
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 font-mono text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 font-mono text-sm"
         rows={6}
         value={steps}
         onChange={(e) => setSteps(e.target.value)}

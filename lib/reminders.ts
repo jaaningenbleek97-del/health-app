@@ -108,7 +108,7 @@ function canNotify(): boolean {
 
 function fireNotification(reminder: Reminder): void {
   if (!canNotify()) return;
-  new Notification("Natura reminder", {
+  new Notification("Terrain reminder", {
     body: reminder.title,
     tag: reminder.id,
   });

@@ -185,7 +185,7 @@ export default function PlanPage() {
         <label className="block text-sm">
           Note
           <textarea
-            className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+            className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
             rows={2}
             placeholder="Optional — e.g. gym closed, travel day"
             value={plan.note}
@@ -249,7 +249,7 @@ export default function PlanPage() {
                   </div>
                   <input
                     type="time"
-                    className="rounded-lg border border-cream-200 bg-white px-2 py-1 text-sm"
+                    className="rounded-lg border border-cream-200 bg-surface px-2 py-1 text-sm"
                     value={session.time}
                     onChange={(e) =>
                       updateDaySession(selected, session.id, {
@@ -272,7 +272,7 @@ export default function PlanPage() {
         )}
         <input
           type="search"
-          className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           placeholder="Add another workout session…"
           value={workoutQuery}
           onChange={(e) => setWorkoutQuery(e.target.value)}
@@ -344,7 +344,7 @@ export default function PlanPage() {
                     </div>
                     <input
                       type="time"
-                      className="rounded-lg border border-cream-200 bg-white px-2 py-1 text-sm"
+                      className="rounded-lg border border-cream-200 bg-surface px-2 py-1 text-sm"
                       value={session.time}
                       onChange={(e) =>
                         updateDaySession(selected, session.id, {
@@ -370,7 +370,7 @@ export default function PlanPage() {
         <form onSubmit={onAddCustom} className="space-y-2 rounded-xl border border-cream-200 p-3">
           <div className="text-sm font-medium text-sage-900">Add a custom time</div>
           <input
-            className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+            className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
             placeholder="e.g. Ginger tea for queasiness"
             value={customTitle}
             onChange={(e) => setCustomTitle(e.target.value)}
@@ -381,7 +381,7 @@ export default function PlanPage() {
               Time
               <input
                 type="time"
-                className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm text-sage-900"
+                className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm text-sage-900"
                 value={customTime}
                 onChange={(e) => setCustomTime(e.target.value)}
               />
@@ -389,7 +389,7 @@ export default function PlanPage() {
             <label className="block text-xs text-sage-600">
               Note
               <input
-                className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm text-sage-900"
+                className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm text-sage-900"
                 placeholder="Optional"
                 value={customNote}
                 onChange={(e) => setCustomNote(e.target.value)}
@@ -403,7 +403,7 @@ export default function PlanPage() {
 
         <input
           type="search"
-          className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           placeholder="Add a catalog remedy…"
           value={remedyQuery}
           onChange={(e) => setRemedyQuery(e.target.value)}
@@ -599,7 +599,7 @@ function TimeField({
         id={href ? undefined : `time-${label}`}
         type="time"
         aria-label={label}
-        className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2"
+        className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

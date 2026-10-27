@@ -1,3 +1,4 @@
+import { moreSupplements } from "@/data/moreSupplements";
 import type { Supplement } from "@/lib/types";
 
 function item(
@@ -9,7 +10,7 @@ function item(
   };
 }
 
-export const supplements: Supplement[] = [
+const catalogSupplements: Supplement[] = [
   item({
     id: "vitamin-d",
     name: "Vitamin D3",
@@ -792,7 +793,7 @@ export const supplements: Supplement[] = [
   item({
     id: "lions-mane",
     name: "Lion’s mane",
-    category: "herb",
+    category: "mushroom",
     summary: "Culinary mushroom used in focus stacks. Human evidence is still early.",
     foodSources: ["Cooked lion’s mane"],
     typicalTiming: "morning",
@@ -809,6 +810,8 @@ export const supplements: Supplement[] = [
   }),
 ];
 
+export const supplements: Supplement[] = [...catalogSupplements, ...moreSupplements];
+
 export function getSupplement(id: string): Supplement | undefined {
   return supplements.find((s) => s.id === id);
 }
@@ -818,5 +821,6 @@ export const supplementCategories: { id: Supplement["category"]; label: string }
   { id: "mineral", label: "Minerals" },
   { id: "amino", label: "Aminos" },
   { id: "herb", label: "Herbs" },
+  { id: "mushroom", label: "Mushrooms" },
   { id: "other", label: "Other" },
 ];

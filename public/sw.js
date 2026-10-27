@@ -1,4 +1,4 @@
-const CACHE = "natura-v3";
+const CACHE = "terrain-v1";
 const PRECACHE = [
   "/",
   "/fitness",

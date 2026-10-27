@@ -68,13 +68,13 @@ export default function NewSupplementPage() {
         know the nutrient amount on the label.
       </p>
       <input
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         placeholder="Name on the bottle"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <textarea
-        className="w-full rounded-xl border border-cream-200 px-3 py-2.5 text-sm"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
         rows={2}
         placeholder="Optional note"
         value={summary}
@@ -82,7 +82,7 @@ export default function NewSupplementPage() {
       />
       <div className="grid grid-cols-2 gap-2">
         <select
-          className="rounded-xl border border-cream-200 px-3 py-2 text-sm"
+          className="rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={category}
           onChange={(e) => setCategory(e.target.value as SupplementCategory)}
         >
@@ -90,10 +90,11 @@ export default function NewSupplementPage() {
           <option value="mineral">Mineral</option>
           <option value="amino">Amino</option>
           <option value="herb">Herb</option>
+          <option value="mushroom">Mushroom</option>
           <option value="other">Other</option>
         </select>
         <select
-          className="rounded-xl border border-cream-200 px-3 py-2 text-sm"
+          className="rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={timing}
           onChange={(e) => setTiming(e.target.value as DoseTiming)}
         >
@@ -108,12 +109,12 @@ export default function NewSupplementPage() {
           type="number"
           min={0}
           step="any"
-          className="w-28 rounded-xl border border-cream-200 px-3 py-2 text-sm"
+          className="w-28 rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={amount}
           onChange={(e) => setAmount(Number(e.target.value))}
         />
         <select
-          className="rounded-xl border border-cream-200 px-3 py-2 text-sm"
+          className="rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={unit}
           onChange={(e) => setUnit(e.target.value as DoseUnit)}
         >
@@ -129,7 +130,7 @@ export default function NewSupplementPage() {
           Optional RDI nutrient
         </label>
         <select
-          className="w-full rounded-xl border border-cream-200 px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={nutrientId}
           onChange={(e) => setNutrientId(e.target.value)}
         >
@@ -145,7 +146,7 @@ export default function NewSupplementPage() {
             type="number"
             min={0}
             step="any"
-            className="mt-2 w-full rounded-xl border border-cream-200 px-3 py-2 text-sm"
+            className="mt-2 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
             placeholder="Amount of that nutrient in one serving"
             value={nutrientAmount || ""}
             onChange={(e) => setNutrientAmount(Number(e.target.value))}

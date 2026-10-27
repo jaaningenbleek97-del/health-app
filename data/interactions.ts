@@ -128,6 +128,143 @@ const pairs: InteractionNote[] = [
     level: "info",
     note: "Both are often taken with a meal that has fat. That is about absorption, not a protocol.",
   },
+  {
+    a: "reishi",
+    b: "ashwagandha",
+    level: "info",
+    note: "Two evening downshift items. Full doses together can leave you groggy.",
+  },
+  {
+    a: "reishi",
+    b: "melatonin",
+    level: "info",
+    note: "Reishi plus melatonin is a heavy evening stack. Start with one change.",
+  },
+  {
+    a: "melatonin",
+    b: "glycine",
+    level: "info",
+    note: "Both are evening tools. You do not need a high melatonin dose plus every amino.",
+  },
+  {
+    a: "melatonin",
+    b: "valerian",
+    level: "caution",
+    note: "Two sedating sleep agents. Easy to feel hungover the next day.",
+  },
+  {
+    a: "lions-mane",
+    b: "mushroom-blend",
+    level: "info",
+    note: "A blend often already includes lion’s mane. Easy to double-count mushrooms.",
+  },
+  {
+    a: "reishi",
+    b: "mushroom-blend",
+    level: "info",
+    note: "Check the blend label before adding a second reishi extract.",
+  },
+  {
+    a: "cordyceps",
+    b: "mushroom-blend",
+    level: "info",
+    note: "Blends often already have cordyceps. Two morning mushroom products is usually one too many.",
+  },
+  {
+    a: "cordyceps",
+    b: "green-tea",
+    level: "info",
+    note: "Both can feel stimulating. Not late if sleep is fragile.",
+  },
+  {
+    a: "tmg-betaine",
+    b: "folate",
+    level: "info",
+    note: "Two methylation items. More donors are not automatically better — watch mood and sleep.",
+  },
+  {
+    a: "tmg-betaine",
+    b: "same",
+    level: "caution",
+    note: "SAMe plus TMG is a strong methyl stack. Clinician territory, not a week-one experiment.",
+  },
+  {
+    a: "five-htp",
+    b: "theanine",
+    level: "caution",
+    note: "5-HTP is not a casual add-on. Never combine it with antidepressants unless a clinician says so.",
+  },
+  {
+    a: "nac",
+    b: "glutathione",
+    level: "info",
+    note: "NAC is a glutathione precursor. You rarely need both on day one.",
+  },
+  {
+    a: "digestive-enzymes",
+    b: "probiotics",
+    level: "info",
+    note: "Enzymes with meals and a probiotic can live in the same week. They do different jobs.",
+  },
+  {
+    a: "betaine-hcl",
+    b: "digestive-enzymes",
+    level: "caution",
+    note: "Two strong gut acids/enzymes. Burning means stop. Betaine HCl is easy to misuse.",
+  },
+  {
+    a: "quercetin",
+    b: "bromelain",
+    level: "info",
+    note: "A common seasonal pairing. Still not a reason to skip food plants.",
+  },
+  {
+    a: "coq10",
+    b: "pqq",
+    level: "info",
+    note: "A popular ‘mito’ pair. Sleep and walking still do more than the pair.",
+  },
+  {
+    a: "berberine",
+    b: "ala",
+    level: "caution",
+    note: "Both show up in blood-sugar conversations. Combining them is not automatically better if you take glucose-lowering drugs.",
+  },
+  {
+    a: "protein-powder",
+    b: "collagen-peptides",
+    level: "info",
+    note: "Both are protein. Collagen is not a complete protein — count total grams, don’t double a shake for no reason.",
+  },
+  {
+    a: "cod-liver-oil",
+    b: "vitamin-d",
+    level: "info",
+    note: "Cod liver oil already has vitamin D and A. Count both so you do not stack retinol.",
+  },
+  {
+    a: "cod-liver-oil",
+    b: "vitamin-a",
+    level: "caution",
+    note: "Two vitamin A sources. Preformed retinol adds up fast.",
+  },
+  {
+    a: "multivitamin",
+    b: "b-complex",
+    level: "caution",
+    note: "Easy to double B6 and folate. Pick one B source unless a clinician split them on purpose.",
+  },
+];
+
+const MUSHROOM_STACK = [
+  "lions-mane",
+  "reishi",
+  "cordyceps",
+  "chaga",
+  "turkey-tail",
+  "shiitake",
+  "maitake",
+  "mushroom-blend",
 ];
 
 const SLEEP_STACK = [
@@ -142,6 +279,15 @@ const SLEEP_STACK = [
 export function notesForIds(ids: string[]): InteractionNote[] {
   const set = new Set(ids);
   const found = pairs.filter((p) => set.has(p.a) && set.has(p.b));
+  const mushroomHits = MUSHROOM_STACK.filter((id) => set.has(id));
+  if (mushroomHits.length >= 3) {
+    found.push({
+      a: mushroomHits[0],
+      b: mushroomHits[1],
+      level: "info",
+      note: `You have ${mushroomHits.length} mushroom items. A blend plus singles is easy to double. Food mushrooms still count.`,
+    });
+  }
   const sleepHits = SLEEP_STACK.filter((id) => set.has(id));
   if (sleepHits.length >= 3) {
     found.push({

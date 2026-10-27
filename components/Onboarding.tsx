@@ -56,7 +56,7 @@ export function Onboarding() {
           <div className="text-xs font-semibold uppercase tracking-wide text-sage-500">
             Welcome · {step + 1} of 3
           </div>
-          <h1 className="text-2xl font-bold text-sage-900">Natura</h1>
+          <h1 className="text-2xl font-bold text-sage-900">Terrain</h1>
 
           {step === 0 && (
             <>
@@ -65,7 +65,7 @@ export function Onboarding() {
                 natural remedies. What should we call you?
               </p>
               <input
-                className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2.5 text-sm"
+                className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
                 placeholder="Your name (optional)"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -101,7 +101,7 @@ export function Onboarding() {
                         className={`flex w-full items-start gap-3 rounded-xl border px-3 py-2.5 text-left ${
                           on
                             ? "border-sage-500 bg-sage-50"
-                            : "border-cream-200 bg-white"
+                            : "border-cream-200 bg-surface"
                         }`}
                       >
                         <span
@@ -148,7 +148,7 @@ export function Onboarding() {
           {step === 2 && (
             <>
               <p className="text-sm text-sage-600">
-                One weekday movement reminder. Alerts work best while Natura is
+                One weekday movement reminder. Alerts work best while Terrain is
                 open.
               </p>
               <label className="flex items-center gap-2 text-sm">
@@ -164,7 +164,7 @@ export function Onboarding() {
                   Time
                   <input
                     type="time"
-                    className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2"
+                    className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
                   />
@@ -183,7 +183,7 @@ export function Onboarding() {
                   className="btn-primary flex-1"
                   onClick={finish}
                 >
-                  Start using Natura
+                  Start using Terrain
                 </button>
               </div>
             </>

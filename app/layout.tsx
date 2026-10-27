@@ -3,10 +3,10 @@ import "./globals.css";
 import { AppFrame } from "@/components/AppFrame";
 
 export const metadata: Metadata = {
-  title: "Natura — Natural wellness",
+  title: "Terrain — Functional wellness",
   description:
-    "Local-first fitness, natural supplements, exercise reminders, and natural remedies.",
-  applicationName: "Natura",
+    "Local-first fitness, supplements, exercise reminders, and remedies.",
+  applicationName: "Terrain",
   manifest: "/manifest.json",
   icons: {
     icon: "/icon.svg",
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: "Natura",
-    statusBarStyle: "default",
+    title: "Terrain",
+    statusBarStyle: "black-translucent",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5C7D5A",
+  themeColor: "#121612",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <AppFrame>{children}</AppFrame>
       </body>

@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 
+const token = (name: string) => `rgb(var(${name}) / <alpha-value>)`;
+
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,32 +13,36 @@ const config: Config = {
     extend: {
       colors: {
         cream: {
-          50: "#FBF8F1",
-          100: "#F5EFE0",
-          200: "#EDE4CE",
-          300: "#E0D4B5",
+          50: token("--cream-50"),
+          100: token("--cream-100"),
+          200: token("--cream-200"),
+          300: token("--cream-300"),
+        },
+        surface: {
+          DEFAULT: token("--surface"),
         },
         sage: {
-          50: "#F2F5F0",
-          100: "#E0E8DB",
-          200: "#C5D4BC",
-          300: "#A3B8A0",
-          400: "#7A9A78",
-          500: "#5C7D5A",
-          600: "#4A6548",
-          700: "#3A5039",
-          800: "#2D3E2C",
-          900: "#1F2B1E",
+          50: token("--sage-50"),
+          100: token("--sage-100"),
+          200: token("--sage-200"),
+          300: token("--sage-300"),
+          400: token("--sage-400"),
+          500: token("--sage-500"),
+          600: token("--sage-600"),
+          700: token("--sage-700"),
+          800: token("--sage-800"),
+          900: token("--sage-900"),
         },
         terracotta: {
-          50: "#FBF0EB",
-          100: "#F5D9CC",
-          200: "#E8B8A0",
-          300: "#D9946E",
-          400: "#C9724A",
-          500: "#B55A35",
-          600: "#9A4829",
-          700: "#7D3920",
+          50: token("--terracotta-50"),
+          100: token("--terracotta-100"),
+          200: token("--terracotta-200"),
+          300: token("--terracotta-300"),
+          400: token("--terracotta-400"),
+          500: token("--terracotta-500"),
+          600: token("--terracotta-600"),
+          700: token("--terracotta-700"),
+          800: token("--terracotta-800"),
         },
       },
       fontFamily: {

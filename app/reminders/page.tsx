@@ -115,7 +115,7 @@ export default function RemindersPage() {
     const n = scheduleTodayNotifications(merged.filter((r) => r.enabled));
     if (ok) {
       setPermNote(
-        `Alerts enabled. ${n} reminder${n === 1 ? "" : "s"} active while this tab stays open. Interval pings only fire while Natura is open. iPhone Safari often blocks web alerts.`
+        `Alerts enabled. ${n} reminder${n === 1 ? "" : "s"} active while this tab stays open. Interval pings only fire while Terrain is open. iPhone Safari often blocks web alerts.`
       );
     } else {
       setPermNote(
@@ -186,7 +186,7 @@ export default function RemindersPage() {
         <label className="block text-sm">
           Title
           <input
-            className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2"
+            className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
@@ -195,7 +195,7 @@ export default function RemindersPage() {
         <label className="block text-sm">
           Style
           <select
-            className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2"
+            className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2"
             value={mode}
             onChange={(e) => setMode(e.target.value as ReminderMode)}
           >
@@ -208,7 +208,7 @@ export default function RemindersPage() {
             Time
             <input
               type="time"
-              className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2"
+              className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2"
               value={time}
               onChange={(e) => setTime(e.target.value)}
               required
@@ -218,7 +218,7 @@ export default function RemindersPage() {
           <label className="block text-sm">
             Interval
             <select
-              className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2"
+              className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2"
               value={intervalMinutes}
               onChange={(e) => setIntervalMinutes(Number(e.target.value))}
             >
@@ -235,7 +235,7 @@ export default function RemindersPage() {
         <label className="block text-sm">
           Type
           <select
-            className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2"
+            className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2"
             value={kind}
             onChange={(e) => setKind(e.target.value as Reminder["kind"])}
           >

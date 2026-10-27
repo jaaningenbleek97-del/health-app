@@ -42,7 +42,7 @@ export default function RemediesPage() {
       <div>
         <h1 className="text-2xl font-bold text-sage-900">Natural remedies</h1>
         <p className="mt-1 text-sm text-sage-600">
-          Food, herbs, and lifestyle comforts — not cures.
+          Food, herbs, sauna, and lifestyle comforts — not cures.
         </p>
         <Link href="/remedies/new" className="mt-2 inline-block text-sm font-medium text-sage-700 underline">
           Add a custom remedy
@@ -52,8 +52,8 @@ export default function RemediesPage() {
 
       <input
         type="search"
-        className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2.5 text-sm"
-        placeholder="Search sleep, ginger, tea, stress…"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
+        placeholder="Search sauna, sleep, ginger, tea, stress…"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

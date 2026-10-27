@@ -73,8 +73,8 @@ export default function SupplementsPage() {
       <div>
         <h1 className="text-2xl font-bold text-sage-900">Catalog</h1>
         <p className="mt-1 text-sm text-sage-600">
-          Browse vitamins, minerals, and herbs. Add one to morning or night —
-          it shows up under Yours.
+          Browse vitamins, minerals, herbs, and mushrooms. Add one to morning
+          or night — it shows up under Yours.
         </p>
       </div>
       <SupplementsSubnav />
@@ -91,8 +91,8 @@ export default function SupplementsPage() {
 
       <input
         type="search"
-        className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2.5 text-sm"
-        placeholder="Search name, mineral, sleep, methylation…"
+        className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2.5 text-sm"
+        placeholder="Search name, mineral, mushroom, sauna, methylation…"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

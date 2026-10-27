@@ -31,7 +31,7 @@ export function VitalsCard() {
           max={14}
           step={0.5}
           inputMode="decimal"
-          className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+          className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={vitals.sleepHours ?? ""}
           onChange={(e) => {
             const raw = e.target.value;
@@ -68,7 +68,7 @@ export function VitalsCard() {
           min={30}
           max={220}
           inputMode="numeric"
-          className="mt-1 w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+          className="mt-1 w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           placeholder="bpm"
           value={vitals.restingHr ?? ""}
           onChange={(e) => {

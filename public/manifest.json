@@ -1,11 +1,11 @@
 {
-  "name": "Natura",
-  "short_name": "Natura",
-  "description": "Natural fitness, vitamins, remedies, and exercise reminders — stored on this device.",
+  "name": "Terrain",
+  "short_name": "Terrain",
+  "description": "Fitness, vitamins, remedies, and reminders — stored on this device.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FBF8F1",
-  "theme_color": "#5C7D5A",
+  "background_color": "#121612",
+  "theme_color": "#121612",
   "icons": [
     {
       "src": "/icon.svg",

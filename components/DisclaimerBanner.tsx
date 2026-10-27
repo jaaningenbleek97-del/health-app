@@ -9,7 +9,7 @@ export function DisclaimerBanner({ compact = false }: { compact?: boolean }) {
   }
   return (
     <div className="rounded-xl border border-terracotta-100 bg-terracotta-50/80 px-3 py-2.5 text-xs text-terracotta-800 leading-relaxed">
-      <strong className="font-semibold">Not medical advice.</strong> Natura
+      <strong className="font-semibold">Not medical advice.</strong> Terrain
       shares general wellness information inspired by functional-medicine and
       performance-wellness ideas (sleep, light, food, minerals). It is not
       affiliated with Andrew Huberman, Gary Brecka, Mark Hyman, or any clinic.

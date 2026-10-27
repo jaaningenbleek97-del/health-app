@@ -21,6 +21,8 @@ export default function SettingsPage() {
   );
   const soundEnabled = useNaturaStore((s) => s.soundEnabled);
   const setSoundEnabled = useNaturaStore((s) => s.setSoundEnabled);
+  const theme = useNaturaStore((s) => s.theme);
+  const setTheme = useNaturaStore((s) => s.setTheme);
   const exportBackup = useNaturaStore((s) => s.exportBackup);
   const importBackup = useNaturaStore((s) => s.importBackup);
   const setOnboardingComplete = useNaturaStore((s) => s.setOnboardingComplete);
@@ -48,7 +50,7 @@ export default function SettingsPage() {
   }
 
   function onExport() {
-    downloadJson(`natura-backup-${todayKey()}.json`, exportBackup());
+    downloadJson(`terrain-backup-${todayKey()}.json`, exportBackup());
     setBackupNote("Backup downloaded. Keep it somewhere safe on this device.");
   }
 
@@ -61,7 +63,7 @@ export default function SettingsPage() {
       setBackupNote(
         ok
           ? "Backup restored on this device."
-          : "That file does not look like a Natura backup."
+          : "That file does not look like a Terrain backup."
       );
     } catch {
       setBackupNote("Could not read that file.");
@@ -106,7 +108,7 @@ export default function SettingsPage() {
       <section className="card space-y-3 p-4">
         <h2 className="font-semibold">Your name</h2>
         <input
-          className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           placeholder="Optional"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -127,7 +129,7 @@ export default function SettingsPage() {
           result and not personal medical advice.
         </p>
         <select
-          className="w-full rounded-xl border border-cream-200 bg-white px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-cream-200 bg-surface px-3 py-2 text-sm"
           value={rdiProfile}
           onChange={(e) =>
             setRdiProfile(e.target.value as "general" | "male" | "female")
@@ -155,6 +157,21 @@ export default function SettingsPage() {
         <Link href="/reminders" className="block text-center text-sm font-medium text-sage-700">
           Edit reminders
         </Link>
+      </section>
+
+      <section className="card space-y-3 p-4">
+        <h2 className="font-semibold">Appearance</h2>
+        <label className="flex items-center justify-between text-sm">
+          <span>Dark mode</span>
+          <input
+            type="checkbox"
+            checked={theme === "dark"}
+            onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+          />
+        </label>
+        <p className="text-xs text-sage-600">
+          Dark is the default. Turn this off for the cream look.
+        </p>
       </section>
 
       <section className="card space-y-3 p-4">
@@ -223,7 +240,7 @@ export default function SettingsPage() {
         <DisclaimerBanner />
         <p className="text-xs leading-relaxed text-sage-600">
           Herbs, vitamins, and home remedies can interact with medications and
-          are unsafe in some conditions. Natura does not sell products and does
+          are unsafe in some conditions. Terrain does not sell products and does
           not replace emergency care. If you think you are having a medical
           emergency, contact local emergency services.
         </p>
